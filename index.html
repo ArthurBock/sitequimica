@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manejo de Solo Sustentável</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos CSS adicionais para melhorar a aparência */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #2c6b5f;
+            color: #fff;
+            padding: 15px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin-right: 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #fff;
+            color: #2c6b5f;
+        }
+
+        .section {
+            padding: 40px 20px;
+            background-color: #fff;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #2c6b5f;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: opacity 0.3s ease;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .overlay-content {
+            background-color: #fff;
+            padding: 30px;
+            max-width: 80%;
+            max-height: 80%;
+            overflow: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .overlay h3 {
+            margin-top: 0;
+            color: #2c6b5f;
+        }
+
+        button {
+            background-color: #2c6b5f;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #1b4d3e;
+        }
+
+        footer {
+            background-color: #2c6b5f;
+            color: #fff;
+            text-align: center;
+            padding: 15px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Manejo de Solo Sustentável</h1>
+            <nav>
+                <ul>
+                    <li><a href="#sobre">Resumo</a></li>
+                    <li><a href="#tecnicas">Técnicas</a></li>
+                    <li><a href="#videos">Vídeos</a></li>
+                    <li><a href="#autores">Autores</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="sobre" class="section">
+        <div class="container">
+            <h2>Este trabalho aborda o manejo de solo</h2>
+            <p>Este trabalho aborda o manejo de solo, uma prática essencial para a sustentabilidade agrícola, realizado pelos autores Nicolas Sanches, Murilo Schmidt, Arthur Bock e Matheus de Carvalho. Nosso estudo enfoca técnicas que preservam e melhoram a qualidade do solo ao longo do tempo. Discutimos a aplicação adequada de fertilizantes para manutenção da fertilidade, rotação de culturas para prevenir a exaustão de nutrientes, controle de erosão com práticas como plantio direto e terraceamento, e manejo integrado de pragas e doenças para reduzir o uso de agroquímicos nocivos.</p>
+
+            <p>Além disso, exploramos práticas de conservação como cultivo mínimo e cobertura vegetal permanente, que protegem a estrutura do solo e promovem sua biodiversidade. Destacamos a importância dessas abordagens não apenas para aumentar a produtividade agrícola imediata, mas também para garantir a sustentabilidade a longo prazo, assegurando que o solo continue a ser um recurso vital para as futuras gerações.</p>
+        </div>
+    </section>
+
+    <section id="tecnicas" class="section">
+        <div class="container">
+            <h2>Técnicas de Manejo de Solo</h2>
+            <div class="gallery">
+                <div class="gallery-item" onclick="showOverlay('Plantio Direto', 'Técnica que consiste em semear ou plantar diretamente sobre a palha ou restos culturais da última colheita.')">
+                    <img src="foto1.jpg" alt="Técnica 1">
+                </div>
+                <div class="gallery-item" onclick="showOverlay('Rotação de Culturas', 'Prática de alternar diferentes culturas na mesma área, em sequência temporal, para melhorar a fertilidade do solo e controlar pragas e doenças.')">
+                    <img src="rotacao-cultura-vantagens.jpg" alt="Técnica 2">
+                </div>
+                <div class="gallery-item" onclick="showOverlay('Cobertura Vegetal', 'Utilização de plantas para cobrir o solo durante todo o ano, protegendo-o da erosão, melhorando a fertilidade e a biodiversidade.')">
+                    <img src="nabo-forrageiro-1.jpg" alt="Técnica 3">
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <section id="videos" class="section">
+        <div class="container">
+            <h2>Vídeo sobre Manejo de Solo</h2>
+            <div class="video-wrapper">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/vDCtafmgP_U" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section id="autores" class="section">
+        <div class="container">
+            <h2>Autores e Turma</h2>
+            <p>Este trabalho foi realizado pelos alunos da turma 3D do Colégio Presidente Castelo Branco. Os autores são Nicolas Sanches, Murilo Schmidt, Arthur Bock e Matheus de Carvalho.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Manejo de Solo Sustentável. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <div class="overlay" id="overlay">
+        <div class="overlay-content">
+            <h3 id="overlay-title"></h3>
+            <p id="overlay-description"></p>
+            <button onclick="closeOverlay()">Fechar</button>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
